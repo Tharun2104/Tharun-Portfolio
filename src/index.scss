@@ -13,6 +13,7 @@
   --color-primary: #0a192f;
   --color-secondary: #4a6cf7;
   --color-tertiary: #54ca95;
+  --navbar-height: 70px; /* Define navbar height as a variable */
 }
 
 * {
@@ -25,6 +26,11 @@
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+}
+
+/* Global scroll margin for all sections */
+section[id] {
+  scroll-margin-top: var(--navbar-height);
 }
 
 a {
