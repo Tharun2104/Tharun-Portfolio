@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: "Inter", "Open Sans", sans-serif;
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f6f7;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+}
+
+a,
+a::before,
+a::after {
+  text-decoration: none;
+  color: unset;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
