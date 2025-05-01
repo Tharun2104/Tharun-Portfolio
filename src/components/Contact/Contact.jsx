@@ -4,6 +4,7 @@ import ProfilePic from "../../assets/images/profile-pic.png";
 import mail from "../../assets/images/socials/mail.png";
 import LinkedIn from "../../assets/images/socials/linkedin.png";
 import GitHub from "../../assets/images/socials/github.png";
+import  Resume from "../../assets/Resume/TharunResume.pdf"
 import { FaFileAlt } from 'react-icons/fa'; // Import resume icon
 import "./Contact.scss";
 
@@ -46,10 +47,17 @@ const Contact = () => {
             <a href="https://www.linkedin.com/in/tharuntejamogili/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <img src={LinkedIn} alt="LinkedIn" />
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume" className="resume-button">
-              <FaFileAlt />
-              <span>Resume</span>
-            </a>
+            <a
+                href={Resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Resume"
+                className="resume-button"
+              >
+                <FaFileAlt style={{ marginRight: "0.5rem" }} />
+                Resume
+              </a>
+
           </div>
         </div>
         <div className="app__contact-container_image">
