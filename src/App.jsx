@@ -1,7 +1,9 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 import { Navbar, Earphone } from "./components";
 import {

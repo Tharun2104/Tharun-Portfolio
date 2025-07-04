@@ -1,8 +1,9 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-export default defineConfig({
-  base: '/Tharun-Portfolio/',
+export default defineConfig(({ command }) => ({
+  // when you run `vite build`, command === 'build'
+  base: command === 'build' ? '/Tharun-Portfolio/' : '/',
   plugins: [react()],
   server: {
     port: 3000,
@@ -12,4 +13,4 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true
   }
-});
+}))

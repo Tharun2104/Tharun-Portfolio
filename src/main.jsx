@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { HashRouter } from "react-router-dom";
 import "./index.scss";
 
 // Create root with error handling
@@ -11,7 +12,9 @@ if (!rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>
-      <App />
+      {/* <HashRouter> */}
+        <App />
+      {/* </HashRouter> */}
     </React.StrictMode>
   );
 }
