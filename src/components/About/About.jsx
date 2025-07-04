@@ -19,29 +19,18 @@ const About = () => {
         <div className="app__about-container_text">
           <h2>About</h2>
           <p>
-            Hello! My name is Tharun and I am a software developer with a passion
-            for creating efficient and innovative solutions. With a strong
-            foundation in computer science and expertise in various programming languages,
-            I am able to develop applications that solve real-world problems and provide
-            excellent user experiences.
+          Hi, I’m Tharun Teja Mogili, a Full-Stack Software Engineer with 3+ years of experience 
+          designing and developing scalable web applications using Java Spring Boot, 
+          React.js and cloud-native services on AWS and Azure.
           </p>
+          <br></br>
+          <p>
+          I specialize in designing and developing microservices and RESTful APIs backed by optimized database schemas. I collaborate with cross-functional teams to implement automated testing and CI/CD pipelines, ensuring reliable, scalable deployments.
+          </p>
+          <br></br>
 
           <p>
-            I spend my time exploring new technologies and frameworks,
-            consistently learning new concepts and tools while
-            building projects to apply what I've learned.
-          </p>
-
-          <p>
-            I'm currently working as a Software Developer at{" "}
-            <a
-              href="https://example.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="app__links"
-            >
-              Tech Company
-            </a>
+          I recently graduated with an MS in Computer Science & Engineering from the University at Buffalo (GPA 4.0) in May 2025 and am seeking SDE/SWE roles. I’m passionate about open-source contributions, learning new technologies, and solving real-world challenges.
           </p>
         </div>
         <div className="app__about-container_image">

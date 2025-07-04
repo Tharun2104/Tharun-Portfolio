@@ -1,0 +1,12 @@
+.home-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #ffffff 0%, #fee2f8 74%);
+  
+  .about-section {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}

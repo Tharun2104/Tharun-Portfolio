@@ -1,18 +1,17 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
+import { Navbar, Earphone } from "./components";
 import {
-  About,
-  Contact,
-  Earphone,
-  Education,
-  Experience,
-  Hero,
-  Navbar,
-  Projects,
-  Skills,
-} from "./components";
+  HomePage,
+  ExperiencePage,
+  EducationPage,
+  SkillsPage,
+  ProjectsPage,
+  ContactPage
+} from "./pages";
 
 const App = () => {
   //aos initialization
@@ -22,17 +21,20 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <Router>
       <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Contact />
+      <div className="page-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/education" element={<EducationPage />} />
+          <Route path="/skills" element={<SkillsPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
       <Earphone />
-    </>
+    </Router>
   );
 };
 

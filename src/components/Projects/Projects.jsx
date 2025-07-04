@@ -1,18 +1,18 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
 import ProjectDetails, {
-  CSScertificate,
-  FCC,
+  AWS,
+  // FCC,
   Java,
-  PHP,
+  // PHP,
   Python,
-  ResponsiveWeb,
+  // ResponsiveWeb,
 } from "./imports";
 import "./Projects.scss";
 import ProjectsCard from "./ProjectsCard";
 
 const Projects = () => {
-  const certificates = [CSScertificate, FCC, ResponsiveWeb, Java, PHP, Python];
+  const certificates = [AWS, Java, Python];
 
   return (
     <section

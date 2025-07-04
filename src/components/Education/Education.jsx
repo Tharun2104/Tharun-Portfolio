@@ -1,96 +1,92 @@
 import React from "react";
 import "./Education.scss";
 import EducationSVG from "../../assets/images/education.svg"; 
-import VasaviLogo from "../../assets/images/vasavi_logo.gif"; 
-import UBLogo from "../../assets/images/ub_logo.png"; 
-import { FaCalendarAlt, FaMapMarkerAlt, FaUniversity } from "react-icons/fa";
+import ublogo   from "../../assets/images/ub_logo.png"
+import { FaCalendarAlt, FaMapMarkerAlt, FaGraduationCap } from "react-icons/fa";
+import vasaviLogo from "../../assets/images/vasavi_logo.gif";
+
 
 const Education = () => {
   const educationData = [
     {
       id: 1,
       degree: "Master of Science",
-      field: "Data Science",
+      field: "Computer Science & Engineering",
       institution: "University at Buffalo (UB)",
       location: "Buffalo, New York, USA",
-      duration: "2022 - 2024",
-      points: [
-        "Specialized in Data Science and Machine Learning",
-        "Graduate Research Assistant - AI Lab",
-        "GPA: 3.92/4.0"
-      ],
-      logo: UBLogo,
-      website: "https://www.buffalo.edu/"
+      duration: "Jan 2024 - May 2025",
+      description: [
+        "⚡ Relevant coursework: Distributed Systems, Machine Learning, Deep Learning, Data Structures and Algorithms, Data Models and Query Languages",
+        "⚡ Specialized in designing and implementing distributed systems and AI/ML projects, including scalable microservices and deep learning pipelines",
+        "⚡ Graduate Teaching Assistant - 'EAS 460/560 Data Models and Query Language' and 'EAS 509LEC - Statistical Learning and Data Mining II' "
+
+      ]
     },
     {
       id: 2,
-      degree: "Bachelor of Technology",
-      field: "Electrical and Electronics Engineering",
+      degree: "Bachelor of Engineering",
+      field: "Electrical and Computer Engineering",
       institution: "Vasavi College of Engineering",
       location: "Hyderabad, India",
-      duration: "2018 - 2022",
-      points: [
-        "3rd place in Smart India Hackathon",
-        "Technical Lead of College Coding Club",
-        "GPA: 3.6/4.0"
-      ],
-      logo: VasaviLogo,
-      website: "https://www.vce.ac.in/"
+      duration: "2017 - 2021",
+      description: [
+        "⚡ Relevant coursework: Operating Systems, Computer Networks, Database Systems, Data Structures & Algorithms",
+        "⚡ Built core skills in programming, object-oriented design, and software engineering principles through rigorous projects",
+        "⚡ Achieved 3rd place in Smart India Hackathon for building a scalable problem solving web platform",
+        "⚡ Served as Technical Lead for the college coding club, conducting workshops on DSA, Git workflows, and clean code practices"
+      ]
     }
   ];
 
   return (
-    <section className="app__education" id="education">
-      <div className="app__education-container">
-        <h2 className="app__education-title">Education</h2>
-
-        <div className="app__education-content">
-          <div className="app__education-cards">
-            {educationData.map((item) => (
-              <div className="app__education-card" key={item.id}>
-                <div className="app__education-card_header">
-                  <img src={item.logo} alt={`${item.institution} Logo`} />
-                  <h3>{item.degree} in {item.field}</h3>
+    <div className="app__education-container">
+      <h2 className="app__education-title">Education</h2>
+      
+      <div className="app__education-content">
+        <div className="app__education-timeline">
+          {educationData.map((edu) => (
+            <div className="app__education-card" key={edu.id} data-aos="fade-up" data-aos-duration="800">
+              <div className="app__education-card_header">
+              <div className="app__education-card_logo">
+                  {edu.institution === "University at Buffalo (UB)" ? (
+                    <img src={ublogo} alt="UB Logo" style={{ width: '60px', height: '60px' }} />
+                  ) : edu.institution === "Vasavi College of Engineering" ? (
+                    <img src={vasaviLogo} alt="Vasavi Logo" style={{ width: '60px', height: '60px' }} />
+                  ) : (
+                    <FaGraduationCap size={45} />
+                  )}
                 </div>
-
-                <div className="app__education-card_body">
-                  <div className="app__education-card_info">
-                    <div className="info-item">
-                      <FaUniversity />
-                      <h4>{item.institution}</h4>
-                    </div>
-                    <div className="info-item-row">
-                      <div className="info-item">
-                        <FaMapMarkerAlt />
-                        <p>{item.location}</p>
-                      </div>
-                      <div className="info-item">
-                        <FaCalendarAlt />
-                        <p>{item.duration}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <ul className="app__education-card_points">
-                    {item.points.map((point, index) => (
-                      <li key={index}>{point}</li>
-                    ))}
-                  </ul>
-
-                  <div className="app__education-card_button">
-                    <a href={item.website} target="_blank" rel="noopener noreferrer">Visit Site</a>
+                <div className="app__education-card_info">
+                  <h3>{edu.degree} in {edu.field}</h3>
+                  <h4>{edu.institution}</h4>
+                  <div className="app__education-card_meta">
+                    <p><FaCalendarAlt /> {edu.duration}</p>
+                    <p><FaMapMarkerAlt /> {edu.location}</p>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="app__education-image">
-            <img src={EducationSVG} alt="Education Illustration" />
-          </div>
+              <div className="app__education-card_body">
+                <ul>
+                  {edu.description.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="app__education-image">
+          <img 
+            src={EducationSVG} 
+            alt="Education illustration" 
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-duration="1000"
+          />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

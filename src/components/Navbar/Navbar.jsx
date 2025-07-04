@@ -1,31 +1,32 @@
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 
 const Menu = () => {
+  const location = useLocation();
+  
   return (
     <>
-      <li>
-        <a href="#home">Home</a>
+      <li className={location.pathname === "/" ? "active" : ""}>
+        <Link to="/">Home</Link>
       </li>
-      <li>
-        <a href="#about">About</a>
+      <li className={location.pathname === "/education" ? "active" : ""}>
+        <Link to="/education">Education</Link>
       </li>
-      <li>
-        <a href="#education">Education</a>
+      <li className={location.pathname === "/experience" ? "active" : ""}>
+        <Link to="/experience">Experience</Link>
       </li>
-      <li>
-        <a href="#experience">Experience</a>
+      
+      <li className={location.pathname === "/skills" ? "active" : ""}>
+        <Link to="/skills">Skills</Link>
       </li>
-      <li>
-        <a href="#skills">Skills</a>
+      <li className={location.pathname === "/projects" ? "active" : ""}>
+        <Link to="/projects">Projects</Link>
       </li>
-      <li>
-        <a href="#projects">Projects</a>
-      </li>
-      <li>
-        <a href="#contacts">Contacts</a>
+      <li className={location.pathname === "/contact" ? "active" : ""}>
+        <Link to="/contact">Contact</Link>
       </li>
     </>
   );
@@ -34,8 +35,35 @@ const Menu = () => {
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   const mobileNav = useRef(null);
+
+  // Determine navbar class based on current route
+  const getNavbarClass = () => {
+    let navClass = 'app__navbar';
+    
+    if (scrolled) {
+      navClass += ' scrolled';
+    }
+    
+    // Add page-specific classes
+    if (location.pathname === '/') {
+      navClass += ' home-nav';
+    } else if (location.pathname === '/education') {
+      navClass += ' education-nav';
+    } else if (location.pathname === '/experience') {
+      navClass += ' experience-nav';
+    } else if (location.pathname === '/skills') {
+      navClass += ' skills-nav';
+    } else if (location.pathname === '/projects') {
+      navClass += ' projects-nav';
+    } else if (location.pathname === '/contact') {
+      navClass += ' contact-nav';
+    }
+    
+    return navClass;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,22 +100,15 @@ const Navbar = () => {
   }, [mobileNav]);
 
   return (
-    <nav className={`app__navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={getNavbarClass()}>
       <div className="app__navbar-container">
-        {/* <div className="app__navbar-container_logo">
-          <a href="#home" className="logo">
-            <span className="logo-text">TT<span className="highlight">M</span></span>
-          </a>
-        </div> */}
-        {/* TESTING */}
         <div className="app__navbar-container_logo">
-          <a href="#home" className="logo">
+          <Link to="/" className="logo">
             <span className="logo-bracket">&lt;</span>
-            <span className="logo-name">Tharun Teja</span>
-            <span className="logo-bracket">/&gt;</span>
-          </a>
+            <span className="logo-name">Thrun</span>
+            <span className="logo-bracket">&gt;</span>
+          </Link>
         </div>
-
         <ul className="app__navbar-container_navlinks">
           <Menu />
         </ul>
@@ -114,10 +135,10 @@ const Navbar = () => {
         >
           <Menu />
           <div className="app__navbar-container_mobilelinks-socials">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/tharuntejamogili" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Tharun2104" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </div>
@@ -128,6 +149,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-// };
-
-// export default Navbar;

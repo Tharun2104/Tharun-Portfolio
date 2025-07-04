@@ -49,3 +49,27 @@ section {
   width: 100%;
   overflow-x: hidden;
 }
+
+.page-content {
+  min-height: calc(100vh - 80px);
+  padding-top: 70px; /* Match navbar height */
+  display: flex;
+  flex-direction: column;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+/* Education page background */
+.education-bg {
+  background-color: #ffffff !important;
+  background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%) !important;
+  background-attachment: fixed !important;
+}

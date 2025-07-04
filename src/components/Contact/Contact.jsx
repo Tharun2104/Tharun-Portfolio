@@ -4,8 +4,8 @@ import ProfilePic from "../../assets/images/profile-pic.png";
 import mail from "../../assets/images/socials/mail.png";
 import LinkedIn from "../../assets/images/socials/linkedin.png";
 import GitHub from "../../assets/images/socials/github.png";
-import  Resume from "../../assets/Resume/TharunResume.pdf"
-import { FaFileAlt } from 'react-icons/fa'; // Import resume icon
+import Resume from "../../assets/Resume/TharunResume.pdf";
+import { FaFileAlt } from 'react-icons/fa';
 import "./Contact.scss";
 
 const Contact = () => {
@@ -15,25 +15,22 @@ const Contact = () => {
     <section
       className="app__contact"
       id="contacts"
-      data-aos="fade"
-      data-aos-offset="100"
-      data-aos-delay="500"
-      data-aos-duration="1000"
-      data-aos-easing="ease"
-      data-aos-once="true"
     >
       <div className="app__contact-container">
         <div className="app__contact-container_contacts">
           <div className="app__contact-profile-pic">
             <img src={ProfilePic} alt="Tharun Teja Mogili" />
           </div>
+          
           <p className="app__contact-container_contacts-touch">
-            - Get in Touch
+            Get in Touch
           </p>
+          
           <h2>Let's create progress together</h2>
           
           <p className="contact-description">
             For all inquiries, you can contact me on any of the platforms below.
+            I'm always open to discussing new projects or opportunities.
           </p>
           
           {/* Social icons */}
@@ -48,18 +45,18 @@ const Contact = () => {
               <img src={LinkedIn} alt="LinkedIn" />
             </a>
             <a
-                href={Resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Resume"
-                className="resume-button"
-              >
-                <FaFileAlt style={{ marginRight: "0.5rem" }} />
-                Resume
-              </a>
-
+              href={Resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Resume"
+              className="resume-button"
+            >
+              <FaFileAlt />
+              <span>Resume</span>
+            </a>
           </div>
         </div>
+        
         <div className="app__contact-container_image">
           <img src={Connection} alt="Connections" />
         </div>

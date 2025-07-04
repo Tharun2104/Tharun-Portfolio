@@ -1,0 +1,36 @@
+.skills-page {
+  min-height: 100vh;
+  padding: 0 0 50px; /* Changed from 80px 0 50px to remove top padding */
+  background-color: #f5f7fa;
+  
+  .page-title {
+    text-align: center;
+    margin: 0 auto 30px;
+    font-size: 2.5rem;
+    color: var(--color-main);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--color-primary);
+      border-radius: 2px;
+    }
+  }
+  
+  .skills-content {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}
