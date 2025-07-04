@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
+  "homepage": "https://tharun2104.github.io/Tharun-Portfolio",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
